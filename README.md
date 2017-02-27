@@ -1,6 +1,6 @@
 # eases-jsnext
 
-This is a fork of [mattdesl/eases](https://github.com/mattdesl/eases). It includes [tree-shaking-friendly ES6 modules](http://rollupjs.org), and a UMD build for [use in browser](http://jsfiddle.net/rich_harris/2npo8g95/).
+This is a fork of [mattdesl/eases](https://github.com/mattdesl/eases). It includes [tree-shaking-friendly ES6 modules](http://rollupjs.org), and a UMD build for [use in browser](http://jsfiddle.net/2cpy2zqm/).
 
 It preserves the original individual CommonJS files, and therefore serves as a drop-in replacement.
 
