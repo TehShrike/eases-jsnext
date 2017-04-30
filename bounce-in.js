@@ -1,13 +1,13 @@
 function bounceOut(t) {
-  var a = 4.0 / 11.0
-  var b = 8.0 / 11.0
-  var c = 9.0 / 10.0
+  var a = 4.0 / 11.0;
+  var b = 8.0 / 11.0;
+  var c = 9.0 / 10.0;
 
-  var ca = 4356.0 / 361.0
-  var cb = 35442.0 / 1805.0
-  var cc = 16061.0 / 1805.0
+  var ca = 4356.0 / 361.0;
+  var cb = 35442.0 / 1805.0;
+  var cc = 16061.0 / 1805.0;
 
-  var t2 = t * t
+  var t2 = t * t;
 
   return t < a
     ? 7.5625 * t2

@@ -1,15 +1,17 @@
-var fs = require( 'fs' );
-var path = require( 'path' );
-var rollup = require( 'rollup' );
+const fs = require( 'fs' );
+const path = require( 'path' );
+const rollup = require( 'rollup' );
 
-var modules = fs.readdirSync( 'src' ).filter( function ( file ) {
+const pkg = require( '../package.json' );
+
+const modules = fs.readdirSync( 'src' ).filter( function ( file ) {
 	return path.extname( file ) === '.js';
 });
 
 // for each file, generated a CommonJS module in the
 // root directory, so people can do things like
-// var bounceOut = require( 'eases/bounce-out' )
-var lib = modules.reduce( function ( promise, module ) {
+// const bounceOut = require( 'eases/bounce-out' )
+const lib = modules.reduce( function ( promise, module ) {
 	return promise.then( function () {
 		return rollup.rollup({ entry: 'src/' + module })
 			.then( function ( bundle ) {
@@ -28,14 +30,14 @@ lib.then( function () {
 	rollup.rollup({ entry: 'src/index.js' })
 		.then( function ( bundle ) {
 			bundle.write({
-				dest: 'dist/eases.umd.js',
+				dest: pkg.main,
 				format: 'umd',
 				moduleName: 'eases'
 			});
 
 			bundle.write({
-				dest: 'dist/eases.es6.js',
-				format: 'es6'
+				dest: pkg.module,
+				format: 'es'
 			});
 		});
 });

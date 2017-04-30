@@ -1,30 +1,32 @@
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function backInOut(t) {
-  var s = 1.70158 * 1.525
+  var s = 1.70158 * 1.525;
   if ((t *= 2) < 1)
     return 0.5 * (t * t * ((s + 1) * t - s))
   return 0.5 * ((t -= 2) * t * ((s + 1) * t + s) + 2)
 }
 
 function backIn(t) {
-  var s = 1.70158
+  var s = 1.70158;
   return t * t * ((s + 1) * t - s)
 }
 
 function backOut(t) {
-  var s = 1.70158
+  var s = 1.70158;
   return --t * t * ((s + 1) * t + s) + 1
 }
 
 function bounceOut(t) {
-  var a = 4.0 / 11.0
-  var b = 8.0 / 11.0
-  var c = 9.0 / 10.0
+  var a = 4.0 / 11.0;
+  var b = 8.0 / 11.0;
+  var c = 9.0 / 10.0;
 
-  var ca = 4356.0 / 361.0
-  var cb = 35442.0 / 1805.0
-  var cc = 16061.0 / 1805.0
+  var ca = 4356.0 / 361.0;
+  var cb = 35442.0 / 1805.0;
+  var cc = 16061.0 / 1805.0;
 
-  var t2 = t * t
+  var t2 = t * t;
 
   return t < a
     ? 7.5625 * t2
@@ -69,7 +71,7 @@ function cubicIn(t) {
 }
 
 function cubicOut(t) {
-  var f = t - 1.0
+  var f = t - 1.0;
   return f * f * f + 1.0
 }
 
@@ -108,9 +110,9 @@ function linear(t) {
 }
 
 function quadInOut(t) {
-    t /= 0.5
+    t /= 0.5;
     if (t < 1) return 0.5*t*t
-    t--
+    t--;
     return -0.5 * (t*(t-2) - 1)
 }
 
@@ -154,7 +156,7 @@ function sineInOut(t) {
 }
 
 function sineIn (t) {
-  var v = Math.cos(t * Math.PI * 0.5)
+  var v = Math.cos(t * Math.PI * 0.5);
   if (Math.abs(v) < 1e-14) return 1
   else return 1 - v
 }

@@ -1,5 +1,5 @@
 function cubicOut(t) {
-  var f = t - 1.0
+  var f = t - 1.0;
   return f * f * f + 1.0
 }
 
